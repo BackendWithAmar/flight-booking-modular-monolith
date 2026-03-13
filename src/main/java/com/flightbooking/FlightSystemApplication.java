@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FlightSystemApplication {
 
 	public static void main(String[] args) {
+		//System.out.println("DB_PASSWORD = " + System.getenv("DB_PASSWORD"));// Checking for db password
 		SpringApplication.run(FlightSystemApplication.class, args);
+
 	}
 
 }
