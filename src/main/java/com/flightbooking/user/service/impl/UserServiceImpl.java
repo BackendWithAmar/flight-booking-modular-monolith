@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     public UserResponse registeUser(RegisterRequest registerRequest){
         User user = User.builder()
                 .email(registerRequest.getEmail())
-                .passwordHash(passwordEncoder.encode(registerRequest.getPassword()))
+                .passwordHash(passwordEncoder.encode(registerRequest.getPassword()))//password hashing using BCrypt encoder
                 .firstName(registerRequest.getFirstName())
                 .lastName(registerRequest.getLastName())
                 .role("USER")

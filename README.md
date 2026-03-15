@@ -1,38 +1,100 @@
-# Flight Booking Platform (Modular Monolith)
+# Flight Booking Platform Backend
 
-Backend system for a scalable travel booking platform.
+A production-style backend system that simulates the architecture of large-scale travel booking platforms.
 
-## Tech Stack
+Examples of similar systems include global travel platforms used by millions of users.
 
-Java  
-Spring Boot  
-Spring Security  
-Spring Data JPA  
-PostgreSQL
+This project demonstrates backend engineering concepts such as:
 
-## Architecture
+* Modular Monolith Architecture
+* Spring Security Authentication
+* JWT-based Authorization
+* REST API Design
+* Domain-driven service design
+* Event-driven architecture (future phase)
 
-Modular Monolith with domain-based structure.
+---
+
+## Technology Stack
+
+Backend
+
+* Java
+* Spring Boot
+* Spring Security
+* Spring Data JPA
+
+Database
+
+* PostgreSQL
+
+Future Infrastructure
+
+* Kafka
+* Redis
+* Docker
+* Kubernetes
+
+---
+
+## Current Architecture
+
+The system currently follows a **Modular Monolith architecture**.
+
+Each domain is implemented as an independent module inside a single Spring Boot application.
 
 Modules:
 
-- user
-- search
-- booking
-- payment
-- rewards
-- notification
+* auth
+* user
+* search
+* booking
+* payment
+* rewards
+* notification
 
-## Current Features
+---
 
-- User registration
-- Password hashing
-- DTO-based API design
-- Global exception handling
+## Implemented Features
 
-## Next Steps
+### Sprint 1 — Authentication System
 
-- JWT authentication
-- Flight search
-- Booking service
-- Microservices extraction
+* User registration
+* Password hashing with BCrypt
+* Login authentication
+* JWT token generation
+* JWT token validation
+* JWT authentication filter
+* Protected API endpoints
+
+---
+
+## Available APIs
+
+User Registration
+
+POST /api/users/register
+
+User Login
+
+POST /api/auth/login
+
+Authenticated Endpoint
+
+GET /api/users/profile
+
+---
+
+## Documentation
+
+Detailed system documentation is available in the `docs` directory.
+
+---
+
+## Current Milestone
+
+Sprint 1 — Authentication System completed.
+
+Next Milestone:
+
+Sprint 2 — Flight Search Module

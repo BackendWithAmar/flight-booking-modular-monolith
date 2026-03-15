@@ -8,5 +8,5 @@ import lombok.Data;
 public class AuthResponse {
 
     private String accessToken;
-    private String tokenType = "JWT Bearer";
+    private String tokenType = "Bearer";
 }
