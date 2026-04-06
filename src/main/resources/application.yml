@@ -14,4 +14,14 @@ spring:
 
 jwt:
   secret: ${JWT_SECRET}
-  expiration: ${JWT_EXPIRATION:86400000}
+  expiration: ${JWT_EXPIRATION:60000}
+
+
+# Add this logging section
+logging:
+  level:
+    com.flightbooking.common.util.JwtUtil: DEBUG
+    com.flightbooking.common.common.JwtAuthenticationFilter: DEBUG
+    com.flightbooking.search.controller: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

@@ -19,7 +19,7 @@ public class JwtUtil {
     @Value("${jwt.expiration}")
     private long EXPIRATION = 86400000;//1 day
 
-    //TODO: generateToke()
+    //Token Generation
     public String generateToken(String email){
         return Jwts.builder()
                 .setSubject(email)
@@ -29,7 +29,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    //TODO: extractUsername()
+    //Extract Token
     public String extractEmail(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey())
@@ -39,7 +39,7 @@ public class JwtUtil {
                 .getSubject();
 
     }
-    //TODO: validateToke()
+    //Validate Token
     public Boolean validateToke(String token){
         try{
             Jwts.parserBuilder()
@@ -52,7 +52,7 @@ public class JwtUtil {
         }
 
     }
-    //TODO: getSigningKey()
+    //Helper method to get the signing key
     private Key getSigningKey(){
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
     }
