@@ -24,7 +24,6 @@ public class Flight {
     @Column(nullable = false)
     private String airline;
 
-
     @Column(nullable = false)
     private String departureAirport;
 

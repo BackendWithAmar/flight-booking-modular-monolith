@@ -29,11 +29,13 @@ public class FlightSearchController {
             @RequestParam (required = true) @NotBlank String arrivalAirport,
             //@RequestParam (required = false)LocalDate date,
             @RequestParam (defaultValue = "0") int page,
-            @RequestParam (defaultValue = "10") int size
+            @RequestParam (defaultValue = "10") int size,
+            @RequestParam(defaultValue = "price") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir
             )
     {
         log.info("Searching flights from {} to {}", departureAirport, arrivalAirport);
-        return flightSearchService.searchFlights(departureAirport, arrivalAirport, page, size);
+        return flightSearchService.searchFlights(departureAirport, arrivalAirport, page, size, sortBy, sortDir);
     }
 
 }

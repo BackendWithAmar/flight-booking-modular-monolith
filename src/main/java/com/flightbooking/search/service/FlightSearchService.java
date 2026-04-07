@@ -8,5 +8,5 @@ import java.time.LocalDate;
 
 public interface FlightSearchService {
 
-    Page<FlightSearchResponse> searchFlights(String departureAirport, String arrivalAirport, int page, int size);
+    Page<FlightSearchResponse> searchFlights(String departureAirport, String arrivalAirport, int page, int size, String sortBy, String sortDir);
 }
